@@ -57,7 +57,7 @@ yLabel| string | Label for the Oy axis
 data| array | Array of pairs containing (Ox,Oy) data
 
 ## Code explanation
-The implementation uses SVG (Scalable Vector Graphics) in order to group the rectangles, lines and texts and obtain the bar chart. The properties `width` and `height` are used to set the size of the chart and, based on these, further computations are made. In the BarChart.js file you can see that a \<svg> tag holds all the components of the chart, having the width and height given by the user. Before rendering the AxisX, AxisY and the Bars, the data is prepared. For example: the length of the axis Ox and Oy, the width of a bar, the minimum and maximum value (that results in the length of the bar), etc.\
+The implementation uses SVG (Scalable Vector Graphics) in order to group the rectangles, lines and texts and obtain the bar chart. The properties `width` and `height` are used to set the size of the chart and, based on these, further computations are made. In the `BarChart.js` file you can see that a \<svg> tag holds all the components of the chart, having the width and height given by the user. Before rendering the `AxisX`, `AxisY` and the `Bars`, the data is prepared. For example: the length of the axis Ox and Oy, the width of a bar, the minimum and maximum value (that results in the length of the bars), etc.\
 
 
 

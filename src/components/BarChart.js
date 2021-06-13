@@ -18,17 +18,17 @@ class BarChart extends Component{
 
         const xAxisY = y0 + yLength;
 
-        const dataYMax = data.reduce(
+        const maxY = data.reduce(
             (currMax, [_, dataY]) => Math.max(currMax, dataY),
             -Infinity
         );
-        const dataYMin = data.reduce(
+        const minY = data.reduce(
             (currMin, [_, dataY]) => Math.min(currMin, dataY),
             Infinity
         );
-        const dataYRange = dataYMax - dataYMin;
+        const rangeY = maxY - minY;
 
-        const barPlotWidth = xLength / data.length;
+        const barWidth = xLength / data.length;
         return (
             <div className='main'>
                 <svg width={maxWidth} height={maxHeight}>
@@ -50,20 +50,20 @@ class BarChart extends Component{
                         xT={x0}
                         yT={y0 - 8}
                         label={yLabel}
-                        maxYData={dataYMax}
-                        rangeYData={dataYRange}
+                        maxYData={maxY}
+                        rangeY={rangeY}
                         yLength={yLength}
                     />
 
                     {data.map(([label, dataY], index) => {
-                        const sidePadding = 10;
-                        const x = x0 + index * barPlotWidth + sidePadding / 2;
+                        const padding = 10;
+                        const x = x0 + index * barWidth + padding / 2;
 
-                        const yRatio = (dataY - dataYMin) / dataYRange;
+                        const yRatio = (dataY - minY) / rangeY;
 
                         const y = y0 + (1 - yRatio) * yLength;
                         const height = yRatio * yLength;
-                        const width = barPlotWidth - sidePadding;
+                        const width = barWidth - padding;
 
                         return (
                             <Bar

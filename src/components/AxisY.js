@@ -3,14 +3,14 @@ import React, {Component} from 'react';
 class AxisY extends Component{
 
     render() {
-        const {x1, y1, x2, y2, xT, yT, label, maxYData, rangeYData, yLength} = this.props;
+        const {x1, y1, x2, y2, xT, yT, label, maxYData, rangeY, yLength} = this.props;
         const numYTicks = 5;
         return (
             <g>
                 <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="grey" />
                 {Array.from({ length: numYTicks }).map((_, index) => {
                     const y = y1 + index * (yLength / numYTicks);
-                    const yValue = Math.round(maxYData - index * (rangeYData / numYTicks));
+                    const yValue = Math.round(maxYData - index * (rangeY / numYTicks));
 
                     return (
                         <g key={index}>
