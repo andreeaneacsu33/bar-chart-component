@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import Plot from "./components/Plot";
 
 const data = [
@@ -8,19 +8,20 @@ const data = [
     ["Thu", 4],
     ["Fri", 5],
     ["Sat", 18],
-    ["Sun", 0],
 ];
 
-function App() {
-    return (
-        <Plot
-            maxWidth={400}
-            maxHeight={300}
-            xLabel={'Day'}
-            yLabel={'$'}
-            data={data}
-        />
-    )
+class App extends Component{
+    render() {
+        return (
+            <Plot
+                maxWidth={450}
+                maxHeight={350}
+                xLabel={'Day'}
+                yLabel={'km'}
+                data={data}
+            />
+        )
+    }
 }
 
 export default App;
