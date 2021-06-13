@@ -4,7 +4,7 @@ import {getHexColor} from "../helpers";
 import AxisX from "./AxisX";
 import AxisY from "./AxisY";
 
-class Plot extends Component{
+class BarChart extends Component{
 
     render() {
         const {data, xLabel, yLabel} = this.props;
@@ -32,7 +32,6 @@ class Plot extends Component{
         return (
             <div className='main'>
                 <svg width={maxWidth} height={maxHeight}>
-                    /* Ox axis*/
                     <AxisX
                         x1={x0}
                         y1={xAxisY}
@@ -43,7 +42,6 @@ class Plot extends Component{
                         label={xLabel}
                     />
 
-                    /*Oy axis*/
                     <AxisY
                         x1={x0}
                         y1={y0}
@@ -57,8 +55,6 @@ class Plot extends Component{
                         yLength={yLength}
                     />
 
-
-                    /* Bar plots */
                     {data.map(([label, dataY], index) => {
                         const sidePadding = 10;
                         const x = x0 + index * barPlotWidth + sidePadding / 2;
@@ -88,4 +84,4 @@ class Plot extends Component{
     }
 }
 
-export default Plot;
+export default BarChart;

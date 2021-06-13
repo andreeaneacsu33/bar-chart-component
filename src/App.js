@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Plot from "./components/Plot";
+import BarChart from "./components/BarChart";
 
 class App extends Component{
     render() {
@@ -13,7 +13,7 @@ class App extends Component{
             ["Sun", 0],
         ];
         return (
-            <Plot
+            <BarChart
                 width={450}
                 height={350}
                 xLabel={'Day'}

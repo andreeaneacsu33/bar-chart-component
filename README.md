@@ -6,12 +6,12 @@ The page will reload if you make edits and you will also see any lint errors in 
 
 ## Use
 
-The Plot is composed of two axis, AxisX and AxisY and several Bar components that are the representation of the data given as input.
+The Bar Chart is composed of two axis, AxisX and AxisY and several Bar components that are the representation of the data given as input.
 You can locate these in `src/components` directory.
 
-To use the Plot component, you have to import it:
+To use the Bar Chart component, you have to import it:
 ``` jsx harmony
-import Plot from "./components/Plot";
+import BarChart from "./components/BarChart";
 ```
 
 and prepare your data:
@@ -31,10 +31,10 @@ const width=450;
 const height=350;
 ```
 
-To render the component in your page, use the Plot tag with your custom data:
+To render the component in your page, use the \<BarChart /> tag with your custom data:
 
 ```jsx harmony
-<Plot
+<BarChart
    data={data}
    xLabel={xLabel}
    yLabel={yLabel}
@@ -50,12 +50,15 @@ To render the component in your page, use the Plot tag with your custom data:
 ## Properties
 |Property | Type | Description
 :---: | :---: | :---:
-width| number | Width of the plot in px
-height| number | Height of the plot in px
+width| number | Width of the bar chart in px
+height| number | Height of the bar chart in px
 xLabel| string | Label for the Ox axis
 yLabel| string | Label for the Oy axis
 data| array | Array of pairs containing (Ox,Oy) data
 
 ## Code explanation
+The implementation uses SVG (Scalable Vector Graphics) in order to group the rectangles, lines and texts and obtain the bar chart. The properties `width` and `height` are used to set the size of the chart and, based on these, further computations are made. In the BarChart.js file you can see that a \<svg> tag holds all the components of the chart, having the width and height given by the user. Before rendering the AxisX, AxisY and the Bars, the data is prepared. For example: the length of the axis Ox and Oy, the width of a bar, the minimum and maximum value (that results in the length of the bar), etc.\
+
+
 
 
