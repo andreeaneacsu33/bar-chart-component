@@ -15,8 +15,8 @@ class App extends Component{
     render() {
         return (
             <Plot
-                maxWidth={450}
-                maxHeight={350}
+                width={450}
+                height={350}
                 xLabel={'Day'}
                 yLabel={'km'}
                 data={data}

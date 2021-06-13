@@ -7,7 +7,9 @@ import AxisY from "./AxisY";
 class Plot extends Component{
 
     render() {
-        const {maxWidth, maxHeight, data, xLabel, yLabel} = this.props;
+        const {data, xLabel, yLabel} = this.props;
+        const maxWidth = this.props.width;
+        const maxHeight = this.props.height;
         const x0 = 50;
         const y0 = 50;
 
