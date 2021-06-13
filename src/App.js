@@ -8,6 +8,7 @@ const data = [
     ["Thu", 4],
     ["Fri", 5],
     ["Sat", 18],
+    ["Sun", 0],
 ];
 
 class App extends Component{
