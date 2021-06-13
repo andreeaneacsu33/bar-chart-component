@@ -9,15 +9,14 @@ The page will reload if you make edits and you will also see any lint errors in 
 The Plot is composed of two axis, AxisX and AxisY and several Bar components that are the representation of the data given as input.
 You can locate these in `src/components` directory.
 
-In the App.js file, the Plot component is used as follows:
-
-```jsx harmony
-import React, {Component} from "react";
+To use the Plot component, you have to import it:
+``` jsx harmony
 import Plot from "./components/Plot";
+```
 
-class App extends Component{
-    render() {
-        const data = [
+and prepare your data:
+```jsx harmony
+const data = [
             ["Mon", 20],
             ["Tue", 14],
             ["Wed", 12],
@@ -26,20 +25,27 @@ class App extends Component{
             ["Sat", 18],
             ["Sun", 0],
         ];
-        return (
-            <Plot
-                width={450}
-                height={350}
-                xLabel={'Day'}
-                yLabel={'km'}
-                data={data}
-            />
-        )
-    }
-}
-
-export default App;
+const xLabel='Day';
+const yLabel='km';
+const width=450;
+const height=350;
 ```
+
+To render the component in your page, use the Plot tag with your custom data:
+
+```jsx harmony
+<Plot
+   data={data}
+   xLabel={xLabel}
+   yLabel={yLabel}
+   width={width}
+   height={height}
+/>
+```
+
+## Example
+
+![Bar Chart Component](https://github.com/andreeaneacsu33/bar-chart-component/blob/master/public/bar-chart-component.png?raw=true)
 
 ## Properties
 |Property | Type | Description
@@ -50,5 +56,6 @@ xLabel| string | Label for the Ox axis
 yLabel| string | Label for the Oy axis
 data| array | Array of pairs containing (Ox,Oy) data
 
-___
-![Bar Chart Component](https://github.com/andreeaneacsu33/bar-chart-component/blob/master/public/bar-chart-component.png?raw=true)
+## Code explanation
+
+
