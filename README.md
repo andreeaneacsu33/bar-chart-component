@@ -60,7 +60,10 @@ data| array | Array of pairs containing (Ox,Oy) data
 The implementation uses SVG (Scalable Vector Graphics) in order to group the rectangles, lines and texts and obtain the bar chart. The properties `width` and `height` are used to set the size of the chart and, based on these, further computations are made. In the `BarChart.js` file you can see that a \<svg> tag holds all the components of the chart, having the width and height given by the user. Before rendering the `AxisX`, `AxisY` and the `Bars`, the data is prepared. For example: the length of the axis Ox and Oy, the width of a bar, the minimum and maximum value (that results in the length of the bars), etc.\
 The `AxisX` component is made using a `<line>` which requires two points `(x1,y1)` and `(x2,y2)` and another point `(x,y)` which represents the position of the `label` displayed under each bar.\
 Similar to the AxisX, the `AxisY` component requires two points `(x1,y1)` and `(x2,y2)` and another point `(xT,yT)` which represents the position of the `label` grading label showing the numbers.\
-The `Bar` component requires two coordinates x and y, a width and a height and uses <rect> to draw a rectangle. The colour is randomly generated thus, each time the page is refreshed, the bars will have different colors.
+The `Bar` component requires two coordinates x and y, a width and a height and uses <rect> to draw a rectangle. The colour is randomly generated thus, each time the page is refreshed, the bars will have different colors.\
+Each Bar has a `tooltip` showing the representation in numbers, as when hovered, the the numbers are present. In order to display the tooltip, the rectangle requires a reference.
+The helpers.js file contains the getHexColor function that, using Math.random() generates a number for the color.\
+The index.css file is used for the style of the application.
 
 
 
