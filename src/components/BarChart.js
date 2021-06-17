@@ -50,7 +50,7 @@ class BarChart extends Component{
                         xT={x0}
                         yT={y0 - 8}
                         label={yLabel}
-                        maxYData={maxY}
+                        maxY={maxY}
                         rangeY={rangeY}
                         yLength={yLength}
                     />
